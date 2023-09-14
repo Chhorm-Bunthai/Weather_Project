@@ -39,7 +39,7 @@ function Wrapper() {
       <div className="container">
         <div className="row mx-auto justify-content-center align-items-center">
           <div className="col-md g-0 ">
-            <Time />
+            <Time onDate={value.dt}/>
           </div>
           <div className="col-md g-0">
             <Location onLocation={value}/>
