@@ -20,7 +20,7 @@ function Time({onDate}) {
   const day = new Date(onDate * 1000) 
   return (
     <div className='date'>
-        {onDate ? <h1>{(day.toUTCString()).slice(0,16)}</h1>:null}
+        {onDate ? <h1 className='date'>{(day.toUTCString()).slice(0,16)}</h1>:null}
         <p className='clock'> {formattedTime}</p>
     </div>
   )

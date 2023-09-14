@@ -5,6 +5,7 @@ import Time from './Time';
 import ShowWeather from './ShowWeather';
 import axios from 'axios';
 import TodayWeather from './TodayWeather';
+import Spinner from '../assets/spinning-dots.svg'
 
 function Wrapper() {
 
@@ -44,24 +45,31 @@ function Wrapper() {
   }, []);
   console.log('fhfh',daysApi)
   return (
-    <main>
-    <section className="top">
-      <div className="container">
-        <div className="row mx-auto justify-content-center align-items-center">
-          <div className="col-md g-0 ">
-            <Time onDate={value.dt}/>
-          </div>
-          <div className="col-md g-0">
-            <Location onLocation={value}/>
+    <>
+    {value.length == 0 ? <div className="loading">
+      
+      <div>
+      <h1>App is loading</h1>
+      <img src={Spinner} alt="" /></div>
+    </div> : <main>
+      <section className="top">
+        <div className="container">
+          <div className="row mx-auto justify-content-center align-items-center">
+            <div className="col-md g-0 ">
+              <Time onDate={value.dt}/>
+            </div>
+            <div className="col-md g-0">
+              <Location onLocation={value}/>
+            </div>
           </div>
         </div>
-      </div>
-      <TodayWeather onShowToday={value}/>
-    </section>
-    <footer>
-      <ShowWeather days={daysApi} onDate={daysApi}/>
-    </footer>
-  </main>
+        <TodayWeather onShowToday={value}/>
+      </section>
+      <footer>
+        <ShowWeather days={daysApi} onDate={daysApi}/>
+      </footer>
+    </main>}
+    </>
   )
 }
 
