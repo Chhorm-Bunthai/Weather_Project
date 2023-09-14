@@ -10,6 +10,8 @@ function Wrapper() {
 
   // fetching current day
   const [value, setValue] = useState([]);
+  // API next for days
+  const [daysApi, setDayApi] = useState([])
 
   function  fetchData() {
     if (navigator.geolocation) {
@@ -29,10 +31,18 @@ function Wrapper() {
       console.log("Geolocation not supported");
     }
   }
+  // second api for next 4 days
+  const urlForDays = `https://api.openweathermap.org/data/2.5/forecast?q=london&appid=1ed49b57432b841036895e62c128d585&units=metric`
+  const fetchDataForWeek = async() =>{
+    const fetchDaysData = await axios(urlForDays);
+    setDayApi(fetchDaysData.data)
+    console.log('fhfh',daysApi)
+  }
   useEffect(() => {
     fetchData();
+    fetchDataForWeek();
   }, []);
-
+  console.log('fhfh',daysApi)
   return (
     <main>
     <section className="top">
@@ -49,7 +59,7 @@ function Wrapper() {
       <TodayWeather onShowToday={value}/>
     </section>
     <footer>
-      <ShowWeather/>
+      <ShowWeather />
     </footer>
   </main>
   )
