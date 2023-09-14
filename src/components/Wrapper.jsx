@@ -59,7 +59,7 @@ function Wrapper() {
       <TodayWeather onShowToday={value}/>
     </section>
     <footer>
-      <ShowWeather />
+      <ShowWeather days={daysApi} onDate={daysApi}/>
     </footer>
   </main>
   )
