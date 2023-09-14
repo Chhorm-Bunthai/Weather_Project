@@ -29,3 +29,12 @@ main{
   .city{
     font-size: 3rem;
   }
+  /*===== Date ======= */
+.date{
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+  }
+  .clock{
+    font-size: 3rem;
+  }
