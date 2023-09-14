@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import React from 'react'
 import Location from './Location';
 import Time from './Time';
-import SearchBar from './SearchBar';
 import ShowWeather from './ShowWeather';
 import axios from 'axios';
+import TodayWeather from './TodayWeather';
 
 function Wrapper() {
 
@@ -46,7 +46,7 @@ function Wrapper() {
           </div>
         </div>
       </div>
-      <SearchBar />
+      <TodayWeather onShowToday={value}/>
     </section>
     <footer>
       <ShowWeather/>
