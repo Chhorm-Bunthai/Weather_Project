@@ -8,15 +8,17 @@ import drizzle from "../assets/weather icons/drizzle.svg";
 import thunderStorm from "../assets/weather icons/thunderstorms.svg";
 
 function ShowWeather({ days, onDate }) {
-  const nextOneDays = new Date(onDate?.list && onDate.list[6].dt * 1000);
-  const nextTwoDays = new Date(onDate?.list && onDate.list[13].dt * 1000);
-  const nextThreedays = new Date(onDate?.list && onDate.list[21].dt * 1000);
-  const nextFourthdays = new Date(onDate?.list && onDate.list[30].dt * 1000);
+  // Create variable for fetching days
+  const nextOneDays = new Date(onDate?.list && onDate.list[8].dt * 1000);
+  const nextTwoDays = new Date(onDate?.list && onDate.list[16].dt * 1000);
+  const nextThreedays = new Date(onDate?.list && onDate.list[24].dt * 1000);
+  const nextFourthdays = new Date(onDate?.list && onDate.list[32].dt * 1000);
 
-  const displayDay1 = days?.list && days?.list[7].weather && days?.list[6].weather[0].main;
-  const displayDay2 = days?.list && days?.list[16].weather && days?.list[13].weather[0].main;
-  const displayDay3 = days?.list && days?.list[23].weather && days?.list[21].weather[0].main;
-  const displayDay4 = days?.list && days?.list[31].weather && days?.list[30].weather[0].main;
+  // Catching description for display icons
+  const displayDay1 = days?.list && days?.list[7].weather && days?.list[8].weather[0].main;
+  const displayDay2 = days?.list && days?.list[16].weather && days?.list[16].weather[0].main;
+  const displayDay3 = days?.list && days?.list[23].weather && days?.list[24].weather[0].main;
+  const displayDay4 = days?.list && days?.list[31].weather && days?.list[32].weather[0].main;
   const state = {
     'Clear': clear,
     'Clouds': clouds,

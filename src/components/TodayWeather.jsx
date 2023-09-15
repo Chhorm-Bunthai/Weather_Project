@@ -30,13 +30,13 @@ function TodayWeather({onShowToday}) {
             <div className="col-9 mx-auto input-form">
               <div className="current">
                 <div className="logo">
+                    <h1 className='today'>Today</h1>
                     <img src={state[s]} alt="" />
                 </div>
                 <div className="description">
-                    <h1>Today</h1>
-                    <p>Temparature : {temp ? Math.floor(temp) : null}  °C</p>
-                    <p>Description : {desc}</p>
-                    <p>Speed : {speed} km/h</p>
+                    <p className='temp'>Temparature  <span className='dis-block'>{temp ? Math.floor(temp) : null}  °C</span></p>
+                    <p className='desc'> Description  <span className='dis-block'>{desc}</span></p>
+                    <p className='speed'>Speed <span className='speed dis-block'>{speed} km/h</span></p>
                 </div>
               </div>
             </div>

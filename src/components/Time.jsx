@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function Time({onDate}) {
+  // catching current time
   const [currentTime, setCurrentTime] = useState(new Date());
   const handleTime = ()=>{
     const time = setInterval(() => {
@@ -11,7 +12,6 @@ function Time({onDate}) {
     }
     return clear;
   }
-
   useEffect(() => {
     handleTime();
   }, []);
@@ -20,7 +20,7 @@ function Time({onDate}) {
   const day = new Date(onDate * 1000) 
   return (
     <div className='date'>
-        {onDate ? <h1>{(day.toUTCString()).slice(0,16)}</h1>:null}
+        {onDate ? <h1 className='date'>{(day.toUTCString()).slice(0,16)}</h1>:null}
         <p className='clock'> {formattedTime}</p>
     </div>
   )
