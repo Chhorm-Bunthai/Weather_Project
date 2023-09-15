@@ -8,6 +8,16 @@ import drizzle from "../assets/weather icons/drizzle.svg";
 import thunderStorm from "../assets/weather icons/thunderstorms.svg";
 
 function ShowWeather({ days, onDate }) {
+  // for fetching icon to display
+  const state = {
+    Clear: clear,
+    Clouds: clouds,
+    Mist: mist,
+    Snow: snow,
+    Rain: rain,
+    Drizzle: drizzle,
+    Thunderstorm: thunderStorm,
+  };
   // Create variable for fetching days
   const nextOneDays = new Date(onDate?.list && onDate.list[8].dt * 1000);
   const nextTwoDays = new Date(onDate?.list && onDate.list[16].dt * 1000);
@@ -19,15 +29,6 @@ function ShowWeather({ days, onDate }) {
   const displayDay2 = days?.list && days?.list[16].weather && days?.list[16].weather[0].main;
   const displayDay3 = days?.list && days?.list[24].weather && days?.list[24].weather[0].main;
   const displayDay4 = days?.list && days?.list[32].weather && days?.list[32].weather[0].main;
-  const state = {
-    Clear: clear,
-    Clouds: clouds,
-    Mist: mist,
-    Snow: snow,
-    Rain: rain,
-    Drizzle: drizzle,
-    Thunderstorm: thunderStorm,
-  };
 
   return (
     <div className="show-weather">

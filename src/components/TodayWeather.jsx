@@ -35,17 +35,17 @@ function TodayWeather({ onShowToday }) {
             </div>
             <div className="description">
               <p className="temp">
-                Temparature{" "}
-                <span className="dis-block">
+                Temparature &nbsp;&nbsp;
+                 <span className="dis-block">
                   {temp ? Math.floor(temp) : null} °C
                 </span>
               </p>
               <p className="desc">
-                {" "}
-                Description <span className="dis-block">{desc}</span>
+              
+                Description <span className="dis-block"> &nbsp;&nbsp;{desc}</span>
               </p>
-              <p className="speed">
-                Speed <span className="speed dis-block">{speed} km/h</span>
+              <p className="speed"> 
+                Speed <span className="speed dis-block">&nbsp;&nbsp;{speed} km/h</span>
               </p>
             </div>
           </div>
