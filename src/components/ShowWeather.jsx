@@ -8,6 +8,16 @@ import drizzle from "../assets/weather icons/drizzle.svg";
 import thunderStorm from "../assets/weather icons/thunderstorms.svg";
 
 function ShowWeather({ days, onDate }) {
+  // for fetching icon to display
+  const state = {
+    Clear: clear,
+    Clouds: clouds,
+    Mist: mist,
+    Snow: snow,
+    Rain: rain,
+    Drizzle: drizzle,
+    Thunderstorm: thunderStorm,
+  };
   // Create variable for fetching days
   const nextOneDays = new Date(onDate?.list && onDate.list[8].dt * 1000);
   const nextTwoDays = new Date(onDate?.list && onDate.list[16].dt * 1000);
@@ -15,19 +25,10 @@ function ShowWeather({ days, onDate }) {
   const nextFourthdays = new Date(onDate?.list && onDate.list[32].dt * 1000);
 
   // Catching description for display icons
-  const displayDay1 = days?.list && days?.list[7].weather && days?.list[8].weather[0].main;
+  const displayDay1 = days?.list && days?.list[8].weather && days?.list[8].weather[0].main;
   const displayDay2 = days?.list && days?.list[16].weather && days?.list[16].weather[0].main;
-  const displayDay3 = days?.list && days?.list[23].weather && days?.list[24].weather[0].main;
-  const displayDay4 = days?.list && days?.list[31].weather && days?.list[32].weather[0].main;
-  const state = {
-    'Clear': clear,
-    'Clouds': clouds,
-    'Mist': mist,
-    'Snow': snow,
-    'Rain': rain,
-    'Drizzle': drizzle,
-    'Thunderstorm': thunderStorm,
-  };
+  const displayDay3 = days?.list && days?.list[24].weather && days?.list[24].weather[0].main;
+  const displayDay4 = days?.list && days?.list[32].weather && days?.list[32].weather[0].main;
 
   return (
     <div className="show-weather">
@@ -43,7 +44,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[6]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[8]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>
@@ -58,7 +59,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[13]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[16]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>
@@ -73,7 +74,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[21]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[24]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>
@@ -88,7 +89,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[30]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[32]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>

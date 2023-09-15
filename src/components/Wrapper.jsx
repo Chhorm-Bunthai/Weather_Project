@@ -13,44 +13,40 @@ function Wrapper() {
   // API next for days
   const [daysApi, setDayApi] = useState([]);
 
-  function fetchData() {
+  function FetchData() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         const currUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=1ed49b57432b841036895e62c128d585&units=metric`;
+        const urlForDays = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=1ed49b57432b841036895e62c128d585&units=metric`;
         try {
+          // fetch currrent data
           const res = await axios(currUrl);
+          // second api for next 4 days
+          const fetchDaysData = await axios(urlForDays);
           setValue(res.data);
-          console.log(res.data);
+          setDayApi(fetchDaysData.data);
+          // console.log(res.data);
         } catch (error) {
           console.error("Error fetching weather data:", error);
-        }
+        };
       });
     } else {
-      console.log("Geolocation not supported");
-    }
-  }
-  // second api for next 4 days
-const urlForDays = `https://api.openweathermap.org/data/2.5/forecast?q=london&appid=1ed49b57432b841036895e62c128d585&units=metric`;
-const fetchDataForWeek = async () => {
-  const fetchDaysData = await axios(urlForDays);
-  setDayApi(fetchDaysData.data);
+      console.log("Location is not support");
+    };
+  };
   // console.log(daysApi)
-};
-useEffect(() => {
-  fetchData();
-  fetchDataForWeek();
-}, []);
-// console.log(daysApi)
+  useEffect(() => {
+    FetchData();
+  }, []);
+  console.log(daysApi)
   return (
     <>
       {value.length == 0 ? (
         <div className="loading">
-          <div>
-            <h1>App is loading</h1>
-            <img src={Spinner} alt="" />
-          </div>
+            <img src={Spinner} alt="Weather Icon for today" />
+            <p>Data is loading</p>
         </div>
       ) : (
         <main>
@@ -71,9 +67,9 @@ useEffect(() => {
             <ShowWeather days={daysApi} onDate={daysApi} />
           </footer>
         </main>
-      )}
+      )};
     </>
   );
-}
+};
 
 export default Wrapper;
