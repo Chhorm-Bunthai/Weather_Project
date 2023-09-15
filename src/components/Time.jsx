@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function Time({onDate}) {
+  // catching current time
   const [currentTime, setCurrentTime] = useState(new Date());
   const handleTime = ()=>{
     const time = setInterval(() => {
@@ -11,7 +12,6 @@ function Time({onDate}) {
     }
     return clear;
   }
-
   useEffect(() => {
     handleTime();
   }, []);
