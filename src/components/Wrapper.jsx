@@ -41,14 +41,13 @@ function Wrapper() {
   useEffect(() => {
     FetchData();
   }, []);
+  console.log(daysApi)
   return (
     <>
       {value.length == 0 ? (
         <div className="loading">
-          <div>
-            <h1>App is loading</h1>
             <img src={Spinner} alt="Weather Icon for today" />
-          </div>
+            <p>Data is loading</p>
         </div>
       ) : (
         <main>

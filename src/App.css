@@ -108,9 +108,10 @@ footer {
   text-align: center;
 }
 .loading {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   margin: 30vh auto;
@@ -120,6 +121,11 @@ footer {
 .loading div {
   width: 100%;
   height: 100%;
+}
+.loading div img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* For moble devices */

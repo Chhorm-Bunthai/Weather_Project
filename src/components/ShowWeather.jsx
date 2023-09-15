@@ -43,7 +43,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[6]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[8]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>
@@ -58,7 +58,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[13]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[16]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>
@@ -73,7 +73,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[21]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[24]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>
@@ -88,7 +88,7 @@ function ShowWeather({ days, onDate }) {
               </div>
               {onDate ? (
                 <p>
-                  {Math.floor(onDate?.list && onDate.list[30]?.main?.temp)} °C
+                  {Math.floor(onDate?.list && onDate.list[32]?.main?.temp)} °C
                 </p>
               ) : null}
             </div>
@@ -97,5 +97,5 @@ function ShowWeather({ days, onDate }) {
       </div>
     </div>
   );
-};
+}
 export default ShowWeather;
