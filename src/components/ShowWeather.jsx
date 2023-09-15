@@ -15,18 +15,18 @@ function ShowWeather({ days, onDate }) {
   const nextFourthdays = new Date(onDate?.list && onDate.list[32].dt * 1000);
 
   // Catching description for display icons
-  const displayDay1 = days?.list && days?.list[7].weather && days?.list[8].weather[0].main;
+  const displayDay1 = days?.list && days?.list[8].weather && days?.list[8].weather[0].main;
   const displayDay2 = days?.list && days?.list[16].weather && days?.list[16].weather[0].main;
-  const displayDay3 = days?.list && days?.list[23].weather && days?.list[24].weather[0].main;
-  const displayDay4 = days?.list && days?.list[31].weather && days?.list[32].weather[0].main;
+  const displayDay3 = days?.list && days?.list[24].weather && days?.list[24].weather[0].main;
+  const displayDay4 = days?.list && days?.list[32].weather && days?.list[32].weather[0].main;
   const state = {
-    'Clear': clear,
-    'Clouds': clouds,
-    'Mist': mist,
-    'Snow': snow,
-    'Rain': rain,
-    'Drizzle': drizzle,
-    'Thunderstorm': thunderStorm,
+    Clear: clear,
+    Clouds: clouds,
+    Mist: mist,
+    Snow: snow,
+    Rain: rain,
+    Drizzle: drizzle,
+    Thunderstorm: thunderStorm,
   };
 
   return (
@@ -97,5 +97,5 @@ function ShowWeather({ days, onDate }) {
       </div>
     </div>
   );
-}
+};
 export default ShowWeather;
