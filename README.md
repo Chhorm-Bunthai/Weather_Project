@@ -3,6 +3,8 @@
 # Project Overview 
 - This is Weather project that created by me. This weather project can help us see the current weather and the upcomming weather forcast for the next four days. This app includes current weather date and time also the current location that we use the app.
 
+#[APP DEMO](https://weather-hosting.vercel.app/)
+
 # Technology Used
 Main technology used in this project include :
 - JavaScript
@@ -58,12 +60,13 @@ Main technology used in this project include :
 - If any bug appear when demo the app after release
 6. Hoxfix Branches
 - used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on main instead of develop.
+## Reference : Git and Github lesson in Core learning course
 # Documents
 - [App flow](https://drive.google.com/file/d/1HP1HJwlDqvo8EBdcnwdm9lRtCKTfyEt4/view?usp=sharing)
 - [Figma](https://www.figma.com/file/3OloKeKbepXCf9IRAfo5Jb/Untitled?type=design&node-id=1%3A3&mode=design&t=zVLLBUMoRXELTBzC-1)
 
 ## Contributors
-- For fetching data, I learn from Udemy (Modern React with Redux [2023 Update]) and Doing research on Google such as [Shecodes](https://www.shecodes.io/) and also [MDN](https://www.shecodes.io/) other random resources.
+- For fetching data, I learn from Udemy (Modern React with Redux [2023 Update]) and Doing research on Google such as [Shecodes](https://www.shecodes.io/) and also [MDN](https://www.shecodes.io/) and other random resources.
 - For icons, I got recommended from TourLeng in ANBPrime Team,[Meteocons](https://bas.dev/)
 - For everything in this weather app, I did and did research about the this weather project by myself and sometimes if I did not clear about some functions in Js that need to use in my concepts of using it to get things display in my components, I sometimes ask ANB prime member about usage of that function.
 ## App components flow
