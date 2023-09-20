@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 // import Wrapper from './components/Wrapper'
 import Location from "./components/Location";
-import ShowWeather from "./components/ShowWeather";
+import DailyWeather from "./components/DailyWeather";
 import Time from "./components/Time";
 import TodayWeather from "./components/TodayWeather";
 import axios from "axios";
@@ -65,7 +65,7 @@ function App() {
             <TodayWeather onShowToday={value} />
           </section>
           <footer>
-            <ShowWeather days={daysApi} onDate={daysApi} />
+            <DailyWeather days={daysApi} onDate={daysApi} />
           </footer>
         </main>
       )}

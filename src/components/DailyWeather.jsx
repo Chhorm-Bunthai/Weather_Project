@@ -7,7 +7,7 @@ import rain from "../assets/weather icons/rain.svg";
 import drizzle from "../assets/weather icons/drizzle.svg";
 import thunderStorm from "../assets/weather icons/thunderstorms.svg";
 
-function ShowWeather({ days, onDate }) {
+function DailyWeather({ days, onDate }) {
   // for fetching icon to display
   const state = {
     Clear: clear,
@@ -99,4 +99,4 @@ function ShowWeather({ days, onDate }) {
     </div>
   );
 }
-export default ShowWeather;
+export default DailyWeather;
