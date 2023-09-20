@@ -167,10 +167,10 @@ footer {
 /* For taplets */
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
-    padding-top: 10px;
+    padding-top: 50px;
   }
   .current {
-    margin-top: 140px;
+    margin-top: 100px;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -210,5 +210,11 @@ footer {
   .block {
     font-size: 1.5rem;
   }
+}
+@media (min-width : 1200px) {
+  .current{
+    margin-top: 120px;
+  }
+  
 }
 
