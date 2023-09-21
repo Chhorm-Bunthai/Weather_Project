@@ -1,11 +1,7 @@
 import React from "react";
-
 function Location({ onLocation }) {
   const nameOfCity = onLocation && onLocation.name ? onLocation.name : null;
-  const CountryName =
-    onLocation && onLocation.sys && onLocation.sys.country
-      ? onLocation.sys.country
-      : null;
+  const CountryName = onLocation && onLocation.sys && onLocation.sys.country? onLocation.sys.country: null;
 
   // console.log(onLocation)
   return (

@@ -7,9 +7,7 @@ function Time({ onDate }) {
     const time = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-    const clear = () => {
-      clearInterval(time);
-    };
+    const clear = () => clearInterval(time);
     return clear;
   };
   useEffect(() => {
